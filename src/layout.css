@@ -10,4 +10,4 @@ html body {min-height:100vh}
 /* ==============================
 * DOCUMENT
 ================================= */
-#doc {max-width:1200px;margin:0 auto;min-height:100vh}
+.doc {max-width:1200px;margin:0 auto;min-height:100vh}
