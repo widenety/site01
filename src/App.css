@@ -14,7 +14,7 @@
 */
 
 .opening {min-height:100vh;display:flex;flex-flow:row;flex-wrap:wrap;align-items:center;align-content:center}
-.opening .msgBox {font-family:"Raleway", "맑은 고딕"}
+.opening .msgBox {}/* font-family:"Raleway", "맑은 고딕" */
 .opening .msgBox span {display:block;box-sizing:border-box;text-shadow:0 0 10px rgba(255, 255, 255, 1);line-height:1}
 .opening .msgBox .t1 {font-size:50px;font-weight:600;}
 .opening .msgBox .t2 {font-size:20px;font-weight:400;padding:0 0 0 7px;margin:10px 0 0}
