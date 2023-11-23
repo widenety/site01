@@ -6,6 +6,10 @@
 .opening .boxTitle .t2 {font-size:20px;font-weight:400;padding:0 0 0 7px;margin:10px 0 0;color:#555;}
 .opening .boxLink {}
 .opening .boxLink nav {}
-.opening .boxLink nav ul {display:flex;flex-flow:row;flex-wrap:wrap;}
+.opening .boxLink nav ul {display:flex;flex-flow:row;flex-wrap:wrap;font-family:"Raleway";font-size:17px;letter-spacing:0}
 .opening .boxLink nav ul li {margin:0 20px 0 0;}
 .opening .boxLink nav ul li:last-child {margin:0;}
+.opening .boxLink nav ul li a {font-weight:500;transition:all .3s ease;}
+.opening .boxLink nav ul li a:hover,
+.opening .boxLink nav ul li a:focus-visible {color:#14B694}
+.opening .boxMsg {width:100%;margin:30px 0 0;box-sizing:border-box;padding:10px 7px 0}

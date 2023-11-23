@@ -11,8 +11,8 @@ function App() {
 					<span className="t1">Widenety Style</span>
 					<span className="t2">web resources preview</span>
 				</h1>
-				<div className="boxLink">
-					<BrowserRouter>
+				<BrowserRouter>
+					<div className="boxLink">
 						<nav>
 							<ul id="test">
 								<li>
@@ -26,13 +26,15 @@ function App() {
 								</li>
 							</ul>
 						</nav>
+					</div>
+					<div className="boxMsg">
 						<Routes>
 							<Route path='/' element={<Home />} />
 							<Route path='/mypage' element={<MyPage />} />
 							<Route path='/dashboard' element={<Dashboard />} />
 						</Routes>
-					</BrowserRouter>
-				</div>
+					</div>
+				</BrowserRouter>
 			</div>
 		</div>
 	);
