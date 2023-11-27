@@ -5,9 +5,54 @@
 * OUTER
 ================================= */
 html {display:block;width:100%}
-html body {display:block;width:100%;background:radial-gradient( at 80% 50%, #fff, #ccc) !important;min-height:100vh}
+html body {display:block;width:100%;min-height:100vh;background:linear-gradient( 90deg, #eee 19px, transparent 1%) center, linear-gradient( #eee 19px, transparent 1%) center #aaa;background-size:20px 20px}
 
 /* ==============================
 * DOCUMENT
 ================================= */
-.doc {max-width:1200px;margin:0 auto}
+.doc {max-width:1200px;margin:0 auto;min-height:100vh}
+
+/* ==============================
+* HEAD
+================================= */
+.Head {display:flex;flex-flow:row;flex-wrap:wrap;align-items:center;align-content:center;justify-content:space-between;height:100px}
+.Head .boxTitle {font-family:"Raleway", "맑은 고딕";line-height:1;display:block}
+.Head .boxTitle a {display:block;line-height:1;}
+.Head .boxTitle a span {display:block;line-height:1.2;letter-spacing:0;box-sizing:border-box;transition:all .3s ease}
+.Head .boxTitle a .t1 {font-size:24px;font-weight:700}
+.Head .boxTitle a .t2 {font-size:13px;font-weight:500;color:#999;margin:2px 0 0 2px}
+.Head .boxTitle a:focus-visible,
+.Head .boxTitle a:hover {color:#14B694;}
+.Head .boxLink {}
+.Head .boxLink nav {}
+.Head .boxLink nav ul {display:flex;flex-flow:row;flex-wrap:wrap;font-family:"Raleway";font-size:15px;letter-spacing:0}
+.Head .boxLink nav ul li {margin:0 10px 0 0;padding:5px 10px 5px 0;box-sizing:border-box;position:relative;}
+.Head .boxLink nav ul li:after {content:"";display:block;position:absolute;width:1px;height:12px;right:0;top:50%;transform:translateY(-50%);background:#aaa}
+.Head .boxLink nav ul li:last-child {margin:0;padding-right:0;}
+.Head .boxLink nav ul li:last-child:after {display:none}
+.Head .boxLink nav ul li a {display:block;font-weight:500;transition:all .3s ease}
+.Head .boxLink nav ul li a span {display:block}
+.Head .boxLink nav ul li a:hover,
+.Head .boxLink nav ul li a:focus-visible {color:#14B694}
+
+/* ==============================
+* CONTENTS
+================================= */
+.Contents {min-height:calc( 100vh - 100px - 50px );background:#cab;}
+
+/* ==============================
+* FOOT
+================================= */
+.Foot {height:50px;display:flex;flex-flow:row;flex-wrap:wrap;justify-content:space-between;align-items:center;align-content:center;font-family:"Raleway";font-weight:400;letter-spacing:0}
+.Foot .boxCopy {font-size:15px;color:#555}
+.Foot .boxLink {}
+.Foot .boxLink nav {}
+.Foot .boxLink nav ul {display:flex;flex-flow:row;flex-wrap:wrap;font-family:"Raleway";font-size:15px;letter-spacing:0}
+.Foot .boxLink nav ul li {margin:0 10px 0 0;padding:5px 10px 5px 0;box-sizing:border-box;position:relative;}
+.Foot .boxLink nav ul li:after {content:"";display:block;position:absolute;width:1px;height:12px;right:0;top:50%;transform:translateY(-50%);background:#aaa}
+.Foot .boxLink nav ul li:last-child {margin:0;padding-right:0;}
+.Foot .boxLink nav ul li:last-child:after {display:none}
+.Foot .boxLink nav ul li a {display:block;font-weight:500;transition:all .3s ease}
+.Foot .boxLink nav ul li a span {display:block}
+.Foot .boxLink nav ul li a:hover,
+.Foot .boxLink nav ul li a:focus-visible {color:#14B694}
