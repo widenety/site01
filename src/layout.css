@@ -38,7 +38,7 @@ html body {display:block;width:100%;min-height:100vh;background:linear-gradient(
 /* ==============================
 * CONTENTS
 ================================= */
-.Contents {min-height:calc( 100vh - 100px - 50px );background:#cab;}
+.Contents {min-height:calc( 100vh - 100px - 50px );box-sizing:border-box;padding:20px;border:1px solid #ddd;background:#fff}
 
 /* ==============================
 * FOOT

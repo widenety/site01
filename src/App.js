@@ -14,8 +14,8 @@ import { getAnalytics } from "firebase/analytics";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
-// ** 데이터 읽기
-import { getFirestore } from "firebase/firestore";
+// ** FireStore 데이터 읽기
+import { disablePersistentCacheIndexAutoCreation, getFirestore } from "firebase/firestore";
 import { collection, getDocs } from "firebase/firestore";
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
@@ -33,19 +33,9 @@ const db = getFirestore(app);				// Initialize Cloud Firestore and get a referen
 const querySnapshot = await getDocs( collection( db, "clients" ) );
 const querySnapshotArray = [];
 let querySnapshotIdxTmp = null;
+
 async function getAllData() {
-	querySnapshot.forEach(( doc ) => {
-		let data = doc.data();
-		/* idx 중복검사 않함. 아이템 생성시 방지.
-		if ( doc.data().idx == querySnapshotIdxTmp ) {		// ** console.log( "중복존재" );
-		} else {											// ** console.log( "중복없음" );
-			querySnapshotArray.push( data );
-		}
-		querySnapshotIdxTmp = doc.data().idx;
-		// */
-		querySnapshotArray.push( data );
-	});
-	console.log( querySnapshotArray );
+
 }
 
 // ** 본체
@@ -107,15 +97,83 @@ function setSiteTitle( txt ) {
 	const siteTitle = document.querySelector("title").dataset.titleString;
 	document.querySelector("title").innerText = siteTitle + " > " + txt;
 }
+
+// ** Home
 function Home() {
 	getAllData();
 	setSiteTitle( "Home" );
-	return <h1>Home</h1>
+
+	// ** FireBase 데이터 추출.
+	let arrayData = [];
+	let arrayDatas = [];
+	async function dataFetch() {
+		querySnapshot.forEach(( doc ) => {
+			let data = doc.data();
+			/* idx 중복검사 않함. 아이템 생성시 방지.
+			if ( doc.data().idx == querySnapshotIdxTmp ) {		// ** console.log( "중복존재" );
+			} else {											// ** console.log( "중복없음" );
+				querySnapshotArray.push( data );
+			}
+			querySnapshotIdxTmp = doc.data().idx;
+			// */
+			querySnapshotArray.push( data );
+		});
+	}
+
+	// ** 데이터 정렬, Object 배열 출력.
+	function dataRearrange() {
+		querySnapshotArray.forEach( obj => {
+			// ** Key값 기준 정렬.
+			const arrayData = {};
+			Object.keys( obj ).sort().forEach(key => {
+				arrayData[key] = obj[key];
+			});
+			arrayDatas.push( arrayData );
+
+			// ** 정렬된 배열 출력.
+			/*
+			for( let index in arrayData ) {
+				console.log(index + " : " + arrayData[index] + "");
+			}
+			// */
+		});
+		return arrayDatas;
+	}
+	async function main() {
+		await dataFetch();
+		let arrayRes = dataRearrange();
+		let arrayResCompo = "";
+		arrayResCompo += "<ul class='firebaseList'>";
+		arrayRes.forEach( arrChild1 => {
+			arrayResCompo += "<li>";
+			for( let index in arrChild1 ) {
+				arrayResCompo += "<dl><dt>" + index + "</dt><dd>" + arrChild1[index] + "</dd></dl>";
+			}
+			arrayResCompo += "</li>";
+		});
+		arrayResCompo += "</ul>";
+		document.getElementById("HomeMain").innerHTML = arrayResCompo;
+	}
+	main();
+
+
+	return (
+		<div id="Home">
+			<h3 className="dataTit">
+				Firebase data 출력.
+			</h3>
+			<div id="HomeMain" className="dataBody"></div>
+		</div>
+	);
 }
+
+// ** Mypage
 function MyPage() {
 	setSiteTitle( "Mypage" );
 	return <h1>Mypage</h1>
 }
+
+// ** DashBoard
 function Dashboard() {
 	setSiteTitle( "Dashboard" );
 	return <h1>Dashboard</h1>
