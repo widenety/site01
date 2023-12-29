@@ -32,11 +32,7 @@ const app = initializeApp(firebaseConfig);	// Initialize Firebase
 const db = getFirestore(app);				// Initialize Cloud Firestore and get a reference to the service
 const querySnapshot = await getDocs( collection( db, "clients" ) );
 const querySnapshotArray = [];
-let querySnapshotIdxTmp = null;
-
-async function getAllData() {
-
-}
+// let querySnapshotIdxTmp = null;			// ** idx 중복검사 않함. 아이템 생성시 방지.
 
 // ** 본체
 function App() {
@@ -100,7 +96,6 @@ function setSiteTitle( txt ) {
 
 // ** Home
 function Home() {
-	getAllData();
 	setSiteTitle( "Home" );
 
 	// ** FireBase 데이터 추출.
@@ -155,7 +150,6 @@ function Home() {
 		document.getElementById("HomeMain").innerHTML = arrayResCompo;
 	}
 	main();
-
 
 	return (
 		<div id="Home">
