@@ -147,7 +147,9 @@ function Home() {
 			arrayResCompo += "</li>";
 		});
 		arrayResCompo += "</ul>";
-		document.getElementById("HomeMain").innerHTML = arrayResCompo;
+		const homeMain = document.getElementById("HomeMain");
+		homeMain.innerHTML = "";
+		homeMain.appendChild( arrayResCompo );
 	}
 	main();
 
