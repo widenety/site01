@@ -117,7 +117,7 @@ function Home() {
 
 	// ** 데이터 정렬, Object 배열 출력.
 	function dataRearrange() {
-		console.log( "############" );
+		console.log( "############");
 		querySnapshotArray.forEach( obj => {
 			// ** Key값 기준 정렬.
 			const arrayData = {};
@@ -140,7 +140,6 @@ function Home() {
 		let arrayRes = dataRearrange();
 		let arrayResCompo = "";
 		let homeMain = document.getElementById("HomeMain");
-		homeMain.innerHTML = "";
 		arrayResCompo += "<ul class='firebaseList'>";
 		arrayRes.forEach( arrChild1 => {
 			arrayResCompo += "<li>";
@@ -151,7 +150,6 @@ function Home() {
 		});
 		arrayResCompo += "</ul>";
 		homeMain.innerHTML = arrayResCompo;
-		arrayResCompo = "";
 	}
 	main();
 
