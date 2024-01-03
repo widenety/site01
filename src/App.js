@@ -31,7 +31,7 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);	// Initialize Firebase
 const db = getFirestore(app);				// Initialize Cloud Firestore and get a reference to the service
 const querySnapshot = await getDocs( collection( db, "clients" ) );
-const querySnapshotArray = [];
+let querySnapshotArray = [];
 // let querySnapshotIdxTmp = null;			// ** idx 중복검사 않함. 아이템 생성시 방지.
 
 // ** 본체
@@ -99,9 +99,8 @@ function Home() {
 	setSiteTitle( "Home" );
 
 	// ** FireBase 데이터 추출.
-	let arrayData = [];
-	let arrayDatas = [];
 	async function dataFetch() {
+		querySnapshotArray = [];	// ** FireStore 데이터 삽입전에 초기화. 여러 메뉴탐방후 본메뉴 재진입시 데이터가 누적되는 현상발견. 선언은 위에서 진행.
 		querySnapshot.forEach(( doc ) => {
 			let data = doc.data();
 			/* idx 중복검사 않함. 아이템 생성시 방지.
@@ -117,7 +116,8 @@ function Home() {
 
 	// ** 데이터 정렬, Object 배열 출력.
 	function dataRearrange() {
-		console.log( "############");
+		let arrayData = [];
+		let arrayDatas = [];
 		querySnapshotArray.forEach( obj => {
 			// ** Key값 기준 정렬.
 			const arrayData = {};
