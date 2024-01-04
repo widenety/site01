@@ -74,8 +74,7 @@ button, .pointer, .hand{cursor:pointer}
 .center, .c {text-align:center !important}
 .vtop, .vtop * {vertical-align:text-top !important}
 .vcen, .vcen * {vertical-align:middle !important}
-.vfoot, .vfoot * {vertical-align:text-bottom !important}
-.vtop2 {vertical-align:top !important}
+.vfoot, .vfoot * {vertical-align:text-bottom !important}.vtop2 {vertical-align:top !important}
 .vcen2 {vertical-align:middle !important}
 .vfoot2 {vertical-align:bottom !important}
 
