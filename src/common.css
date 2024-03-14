@@ -131,3 +131,6 @@ button, .pointer, .hand{cursor:pointer}
 /** -- LEVEL */
 .lv1 {margin:0 0 20px;padding:0 0 20px;border-bottom:1px solid #ddd;box-sizing:border-box;position:relative}
 .lv1:last-child {margin:0;padding:0;border-bottom:0}
+
+.cuth {width:auto;max-width:100%;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;word-wrap:normal;}
+.cutv {display:-webkit-box;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;white-space:normal;height:50px;word-wrap:break-word;-webkit-line-clamp:3;-webkit-box-orient:vertical}

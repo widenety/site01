@@ -2,6 +2,7 @@ import logo from './logo.svg';
 import './common.css';
 import './layout.css';
 import './App.css';
+import $ from 'jquery'
 
 // ** 리액트 Router
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
@@ -150,8 +151,12 @@ function Home() {
 		});
 		arrayResCompo += "</ul>";
 		homeMain.innerHTML = arrayResCompo;
+
+		$("#Home").css({ "border":"10px solid #f00" });
 	}
 	main();
+
+
 
 	return (
 		<div id="Home">
