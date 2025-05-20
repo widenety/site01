@@ -151,8 +151,6 @@ function Home() {
 		});
 		arrayResCompo += "</ul>";
 		homeMain.innerHTML = arrayResCompo;
-
-		$("#Home").css({ "border":"10px solid #f00" });
 	}
 	main();
 
